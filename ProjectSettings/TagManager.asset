@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - GRASS
+  - Destroy
+  - Border
+  - ENEMY
+  - PLAYER
+  - EnemyDestroy
+  - PlayerDestroy
   layers:
   - Default
   - TransparentFX

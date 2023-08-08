@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TeamList : MonoBehaviour
 {
-    public GameObject[] teamOneEnemy;
-    public GameObject[] teamTwoEnemy;
-    public GameObject[] teamThreeEnemy;
-    public GameObject[] teamFourEnemy;
+    public GameObject TeamOneWaveOne;
+    public GameObject TeamOneWaveTwo;
+    public GameObject TeamOneWaveThree;
+    public GameObject TeamTwoWaveOne;
+    public GameObject TeamTwoWaveTwo;
+    public GameObject TeamTwoWaveThree;
 }

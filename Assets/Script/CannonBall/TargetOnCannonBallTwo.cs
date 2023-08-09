@@ -19,6 +19,6 @@ public class TargetOnCannonBallTwo : MonoBehaviour
         var obj = Instantiate(ObjectToInstanciate, new Vector3(this.transform.position.x, this.transform.position.y + instanciateposition, this.transform.position.z), ObjectToInstanciate.transform.rotation);
         obj.GetComponent<LengthAndMovementCannonBallTwo>().length = LenghtOfTarget;
         obj.GetComponent<LengthAndMovementCannonBallTwo>().speed = Speed;
-        obj.transform.parent = this.gameObject.transform;
+        obj.transform.parent = this.gameObject.transform.parent;
     }
 }

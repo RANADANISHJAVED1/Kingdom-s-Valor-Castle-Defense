@@ -24,17 +24,22 @@ public class SitaticKnifeThrow : MonoBehaviour
             SoliderAnimation.SetTrigger("Throw");
             StartCoroutine(throwing());
         }
-        
     }
     IEnumerator throwing()
     {
         yield return new WaitForSeconds(2);
-        instanciateKnife();
+        if (!DiedBool)
+        {
+            instanciateKnife();
+        }
     }
     void instanciateKnife()
     {
-        var obj = Instantiate(knifeObj, new Vector3(this.transform.position.x + 0.461f, this.transform.position.y + 0.7f, this.transform.position.z + 0.149f), knifeObj.transform.rotation);
-        obj.transform.parent = this.transform;
+        if (!DiedBool)
+        {
+            var obj = Instantiate(knifeObj, new Vector3(this.transform.position.x + 0.461f, this.transform.position.y + 0.7f, this.transform.position.z + 0.149f), knifeObj.transform.rotation);
+            obj.transform.parent = this.transform.parent;
+        }
     }
     public void Died()
     {

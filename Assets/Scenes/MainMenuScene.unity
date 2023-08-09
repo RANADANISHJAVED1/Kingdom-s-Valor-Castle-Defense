@@ -282,8 +282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstWaveTime: 15
-  secondWaveTime: 80
-  thirdWaveTime: 150
+  secondWaveTime: 30
+  thirdWaveTime: 50
   firstWaveEnemyNumber: 5
   secondWaveEnemyNumber: 7
   thirdWaveEnemyNumber: 8

@@ -1397,6 +1397,8 @@ GameObject:
   - component: {fileID: 3630721200227661469}
   - component: {fileID: 2222301465312794680}
   - component: {fileID: 1482922952098363083}
+  - component: {fileID: 3541206770148631755}
+  - component: {fileID: 271236928089657408}
   m_Layer: 0
   m_Name: soldierRemastered
   m_TagString: ENEMY
@@ -1497,6 +1499,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c934f61911f91b64d99c8ba52c7c0f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3541206770148631755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6011952219742009456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699267b805a2c1243bc8ae5f666bda90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+--- !u!114 &271236928089657408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6011952219742009456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82400d886f7c9c6408533b46376649e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6378923862756308877

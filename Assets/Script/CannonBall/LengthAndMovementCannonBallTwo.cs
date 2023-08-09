@@ -21,7 +21,7 @@ public class LengthAndMovementCannonBallTwo : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("ENEMY"))
         {
@@ -33,5 +33,5 @@ public class LengthAndMovementCannonBallTwo : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }
-    }
+    }*/
 }

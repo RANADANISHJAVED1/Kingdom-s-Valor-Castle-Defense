@@ -20,7 +20,10 @@ public class SoldiderTwoAnimationAndMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if (!diedBool)
+        {
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }   
     }
     void animationOnredpeating()
     {
@@ -34,10 +37,9 @@ public class SoldiderTwoAnimationAndMovement : MonoBehaviour
         if (!playOneTime)
         {
             diedBool = true;
-            solider2animator.SetTrigger("dying");
+            solider2animator.SetTrigger("Dying");
             speed = 0;
             playOneTime = true;
         }
-
     }
 }

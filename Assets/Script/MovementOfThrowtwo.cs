@@ -18,6 +18,6 @@ public class MovementOfThrowtwo : MonoBehaviour
     public void instanciateStone()
     {
         var obj =Instantiate(stone, new Vector3(this.transform.position.x+positionInstanciate.x,this.transform.position.y+positionInstanciate.y,this.transform.position.z), stone.transform.rotation);
-        obj.transform.parent = this.transform;
+        obj.transform.parent = this.transform.parent;
     }
 }

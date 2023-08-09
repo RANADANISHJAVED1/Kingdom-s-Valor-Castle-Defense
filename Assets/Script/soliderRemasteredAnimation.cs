@@ -18,7 +18,10 @@ public class soliderRemasteredAnimation : MonoBehaviour
     }
     private void Update()
     {
-        transform.Translate(Vector3.forward* speed * Time.deltaTime);
+        if (!diedBool)
+        {
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        } 
     }
     void walkingAndThrowController()
     {
@@ -32,20 +35,28 @@ public class soliderRemasteredAnimation : MonoBehaviour
     IEnumerator throwing()
     {
         yield return new WaitForSeconds(2);
-        instanciateKnife();
-        SoliderAnimation.SetTrigger("Walking");
-        speed = 1;
+        if (!diedBool)
+        {
+            instanciateKnife();
+            SoliderAnimation.SetTrigger("Walking");
+            speed = 1;
+        }
     }
     IEnumerator Speedzero()
     {
         yield return new WaitForSeconds(4);
-        speed = 0;
-
+        if (!diedBool)
+        {
+            speed = 0;
+        }
     }
     void instanciateKnife()
     {
-        var obj = Instantiate(knifeObj, new Vector3(this.transform.position.x - 0.461f, this.transform.position.y + 0.7f, this.transform.position.z + 0.149f), knifeObj.transform.rotation);
-        obj.transform.parent = this.transform;
+        if (!diedBool)
+        {
+            var obj = Instantiate(knifeObj, new Vector3(this.transform.position.x - 0.461f, this.transform.position.y + 0.7f, this.transform.position.z + 0.149f), knifeObj.transform.rotation);
+            obj.transform.parent = this.transform.parent;
+        }
     }
     public void died()
     {
@@ -56,7 +67,5 @@ public class soliderRemasteredAnimation : MonoBehaviour
             speed = 0;
             playOneTime = true;
         }
-        
     }
-
 }

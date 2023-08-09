@@ -6,14 +6,14 @@ public class EnemySpawn : MonoBehaviour
 {
     private TeamList teamList;
     public GameObject EnemyListFatherObj;
-    private float firstWaveTime;
-    private float secondWaveTime;
-    private float thirdWaveTime;
+    public float firstWaveTime;
+    public float secondWaveTime;
+    public float thirdWaveTime;
     private int firstWaveEnemyNumbers;
     private int secondWaveEnemyNumbers;
     private int thirdWaveEnemyNumbers;
     private int teamNumberAsEnemy;
-    int loop;
+    public int loop;
     float time;
     private void Start()
     {
@@ -36,8 +36,9 @@ public class EnemySpawn : MonoBehaviour
     {
         for (; loop > 0 && time <= 0; loop--)
         {
-            randomSpawnEnemy();
+         randomSpawnEnemy();
         }
+        
     }
     private void waveTimeUpdater()
     {
@@ -75,7 +76,7 @@ public class EnemySpawn : MonoBehaviour
             loop = thirdWaveEnemyNumbers;
         }
     }
-    private void randomSpawnEnemy()
+    void randomSpawnEnemy()
     {
         int xPositionRandom = Random.Range(11, 20);
         int zPositionRandom = Random.Range(1, 6);

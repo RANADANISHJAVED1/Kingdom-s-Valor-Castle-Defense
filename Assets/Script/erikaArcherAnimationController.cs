@@ -18,7 +18,10 @@ public class erikaArcherAnimationController : MonoBehaviour
     }
     private void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+        if (!diedBool)
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
     }
     void aimanimation()
     {
@@ -33,25 +36,33 @@ public class erikaArcherAnimationController : MonoBehaviour
     IEnumerator recoilAnim()
     {
         yield return new WaitForSeconds(1);
-        instanciateArrow();
-        erikaArcherController.SetTrigger("recoilAnimation");
+        if (!diedBool)
+        {
+            instanciateArrow();
+            erikaArcherController.SetTrigger("recoilAnimation");
+        }
     }
     void instanciateArrow()
     {
         var obj =Instantiate(arrow, new Vector3(this.transform.position.x-0.461f, this.transform.position.y+ 0.7f, this.transform.position.z+ 0.149f),arrow.transform.rotation);
-        obj.transform.parent = this.transform;
+        obj.transform.parent = this.transform.parent;
     }
     IEnumerator walking()
     {
         yield return new WaitForSeconds(2);
-        speed = 1;
-        erikaArcherController.SetTrigger("walking");
+        if (!diedBool)
+        {
+            speed = 1;
+            erikaArcherController.SetTrigger("walking");
+        }
     }
     IEnumerator Speedzero()
     {
         yield return new WaitForSeconds(3);
-        speed = 0;
-        
+        if (!diedBool)
+        {
+            speed = 0;
+        }
     }
     public void dying()
     {
@@ -59,9 +70,8 @@ public class erikaArcherAnimationController : MonoBehaviour
         {
             diedBool = true;
             speed = 0;
-            erikaArcherController.SetTrigger("Dying");
             playOneTime = true;
-            
+            erikaArcherController.SetTrigger("Dying");
         }
     }
 }

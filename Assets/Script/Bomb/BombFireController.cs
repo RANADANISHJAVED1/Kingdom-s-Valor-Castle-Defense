@@ -9,6 +9,12 @@ public class BombFireController : MonoBehaviour
     public ParticleSystem fire;
     private bool hitted;
     public GameObject ground;
+    
+    private void Start()
+    {
+        FireObj.SetActive(false);
+        hitted = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("ENEMY") && !hitted)
@@ -23,11 +29,6 @@ public class BombFireController : MonoBehaviour
             fire.Play();
             StartCoroutine(fireCloser());
         }
-    }
-    private void Start()
-    {
-        FireObj.SetActive(false);
-        hitted = false;
     }
     IEnumerator fireCloser()
     {

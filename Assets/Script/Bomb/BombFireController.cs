@@ -8,7 +8,6 @@ public class BombFireController : MonoBehaviour
     public GameObject FireObj;
     public ParticleSystem fire;
     private bool hitted;
-    public GameObject ground;
     
     private void Start()
     {
@@ -34,6 +33,6 @@ public class BombFireController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         Destroy(fire);
-        this.gameObject.tag = ground.gameObject.tag;
+        this.gameObject.GetComponent<GroundReplaceWithGrass>().replace();
     }
 }

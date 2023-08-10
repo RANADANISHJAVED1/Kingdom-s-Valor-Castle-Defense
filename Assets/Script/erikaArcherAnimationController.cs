@@ -9,6 +9,7 @@ public class erikaArcherAnimationController : MonoBehaviour
     public int speed;
     private bool diedBool;
     private bool playOneTime;
+    public Vector3 positionSet;
     private void Start()
     {
         playOneTime = false;
@@ -44,8 +45,13 @@ public class erikaArcherAnimationController : MonoBehaviour
     }
     void instanciateArrow()
     {
-        var obj =Instantiate(arrow, new Vector3(this.transform.position.x-0.461f, this.transform.position.y+ 0.7f, this.transform.position.z+ 0.149f),arrow.transform.rotation);
-        obj.transform.parent = this.transform.parent;
+        if (!diedBool)
+        {
+           
+               
+            var obj = Instantiate(arrow, new Vector3(this.transform.position.x+positionSet.x, this.transform.position.y+positionSet.y, this.transform.position.z+positionSet.z), arrow.transform.rotation);
+            obj.transform.parent = this.transform.parent;
+        }
     }
     IEnumerator walking()
     {

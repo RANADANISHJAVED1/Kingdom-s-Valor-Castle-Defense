@@ -281,12 +281,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0244bf03fe7434fbb0a0b035602627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstWaveTime: 15
-  secondWaveTime: 30
-  thirdWaveTime: 50
-  firstWaveEnemyNumber: 5
-  secondWaveEnemyNumber: 7
-  thirdWaveEnemyNumber: 8
+  firstWaveTime: 10
+  secondWaveTime: 20
+  thirdWaveTime: 25
+  firstWaveEnemyNumber: 4
+  secondWaveEnemyNumber: 4
+  thirdWaveEnemyNumber: 5
 --- !u!1 &197063723
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,12 +658,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0244bf03fe7434fbb0a0b035602627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstWaveTime: 15
-  secondWaveTime: 75
-  thirdWaveTime: 120
-  firstWaveEnemyNumber: 8
-  secondWaveEnemyNumber: 10
-  thirdWaveEnemyNumber: 12
+  firstWaveTime: 10
+  secondWaveTime: 20
+  thirdWaveTime: 25
+  firstWaveEnemyNumber: 5
+  secondWaveEnemyNumber: 7
+  thirdWaveEnemyNumber: 7
 --- !u!1 &290005264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,11 +1243,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstWaveTime: 10
-  secondWaveTime: 50
-  thirdWaveTime: 50
-  firstWaveEnemyNumber: 12
-  secondWaveEnemyNumber: 12
-  thirdWaveEnemyNumber: 12
+  secondWaveTime: 20
+  thirdWaveTime: 20
+  firstWaveEnemyNumber: 8
+  secondWaveEnemyNumber: 8
+  thirdWaveEnemyNumber: 9
 --- !u!1 &577882225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,12 +1912,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0244bf03fe7434fbb0a0b035602627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstWaveTime: 12
-  secondWaveTime: 70
-  thirdWaveTime: 100
-  firstWaveEnemyNumber: 10
-  secondWaveEnemyNumber: 10
-  thirdWaveEnemyNumber: 10
+  firstWaveTime: 10
+  secondWaveTime: 20
+  thirdWaveTime: 25
+  firstWaveEnemyNumber: 8
+  secondWaveEnemyNumber: 8
+  thirdWaveEnemyNumber: 8
 --- !u!1 &999371974
 GameObject:
   m_ObjectHideFlags: 0

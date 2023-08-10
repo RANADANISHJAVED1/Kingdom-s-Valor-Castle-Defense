@@ -20,7 +20,7 @@ public class LengthAndMovementCannonBall : MonoBehaviour
         instanciatePosition = this.transform.position;
         fireObj.SetActive(false);
     }
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
             if (other.gameObject.CompareTag("ENEMY") || other.gameObject.CompareTag("EnemyDestroy"))
             {
@@ -30,19 +30,19 @@ public class LengthAndMovementCannonBall : MonoBehaviour
                 fire.Play();
                 StartCoroutine(fireController());
             }
-    }
+    }*/
     private void FixedUpdate()
     {
         fireOnBall.transform.position = this.transform.position;
         transform.Translate(Vector3.right * speed * Time.deltaTime);
-        if (transform.position.x - instanciatePosition.x >= length)
+        /*if (transform.position.x - instanciatePosition.x >= length)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
     IEnumerator fireOnBallFun()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         fireOnBallObj.SetActive(true);
         fireOnBall.Play();
     }

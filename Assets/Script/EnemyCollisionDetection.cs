@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyCollisionDetection : MonoBehaviour
 {
     private bool playOneTime;
+    public GameObject coin;
     private void Start()
     {
         playOneTime = false;
@@ -19,7 +20,7 @@ public class EnemyCollisionDetection : MonoBehaviour
                 this.gameObject.GetComponent<Health>().healthDecrement(-5);
                 if (this.gameObject.GetComponent<Health>().health<=0)
                 {
-                    Destroy(this.gameObject);
+                    StartCoroutine(objDeletionCaller());
                 }
             }
             else if(this.gameObject.name == "soldierRemastered(Clone)")
@@ -45,7 +46,7 @@ public class EnemyCollisionDetection : MonoBehaviour
                 this.gameObject.GetComponent<Health>().healthDecrement(-5);
                 if (this.gameObject.GetComponent<Health>().health <= 0)
                 {
-                    Destroy(this.gameObject);
+                    StartCoroutine(objDeletionCaller());
                 }
             }
             else if (this.gameObject.name == "Erika Archer With Bow Arrow(Clone)")
@@ -103,8 +104,18 @@ public class EnemyCollisionDetection : MonoBehaviour
         yield return new WaitForSeconds(3);
         if (!playOneTime)
         {
+            Instantiate(coin,new Vector3( this.gameObject.transform.position.x, 0.381f,this.gameObject.transform.position.z), coin.transform.rotation);
             Destroy(this.gameObject);
             playOneTime= true;
+        }
+    }
+    public void diectobjDeletionCaller()
+    {
+        if (!playOneTime)
+        {
+            Instantiate(coin, new Vector3(this.gameObject.transform.position.x, 0.381f, this.gameObject.transform.position.z), coin.transform.rotation);
+            Destroy(this.gameObject);
+            playOneTime = true;
         }
     }
     public void callOutsideObjDeletionCaller()

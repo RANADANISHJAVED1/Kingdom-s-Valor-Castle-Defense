@@ -1858,6 +1858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow: {fileID: 4865309214770636011, guid: 9a4fe10bd9bad744693ffeda304d2cbb, type: 3}
   speed: 0
+  positionSet: {x: -0.461, y: 0.7, z: 0}
 --- !u!54 &3576781094104622268
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1899,6 +1900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c934f61911f91b64d99c8ba52c7c0f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin: {fileID: 7136495971748635956, guid: 89be6756531d81f4fbe5353b849d930e, type: 3}
 --- !u!114 &2561413041925061637
 MonoBehaviour:
   m_ObjectHideFlags: 0

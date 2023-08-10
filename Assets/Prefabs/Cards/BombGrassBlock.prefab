@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1725099909855012662}
   - component: {fileID: 2775464671444775727}
   - component: {fileID: 3629914343045204134}
+  - component: {fileID: 3878920243956331982}
   m_Layer: 0
   m_Name: BombGrassBlock
   m_TagString: PLAYER
@@ -137,7 +138,6 @@ MonoBehaviour:
   - {fileID: 7365035917848408308}
   FireObj: {fileID: 6586994798774076549}
   fire: {fileID: 6461643416701995213}
-  ground: {fileID: 9209644581247601795, guid: 1003a60da5ed1e74f9b9fbc3e1c4c8a3, type: 3}
 --- !u!65 &1725099909855012662
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,6 +180,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   border: {fileID: 1765324316790147210}
+--- !u!114 &3878920243956331982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824183731009158982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56fb3ecf7bedf84783d9b06a0dd86a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grassObj: {fileID: 9209644581247601795, guid: 00b38b0a7f693c245ae7795855e7017b,
+    type: 3}
 --- !u!1001 &2026354587184688869
 PrefabInstance:
   m_ObjectHideFlags: 0

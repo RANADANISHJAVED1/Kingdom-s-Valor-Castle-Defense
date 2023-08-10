@@ -11,6 +11,9 @@ TagManager:
   - PLAYER
   - EnemyDestroy
   - PlayerDestroy
+  - Ash
+  - AshPlayer
+  - AshEnemy
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,11 @@ guid: b56fb3ecf7bedf84783d9b06a0dd86a1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - grassObj: {fileID: 9209644581247601795, guid: 00b38b0a7f693c245ae7795855e7017b,
+      type: 3}
+  - coinObj: {fileID: 7136495971748635956, guid: 89be6756531d81f4fbe5353b849d930e,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

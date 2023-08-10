@@ -133,8 +133,8 @@ MonoBehaviour:
   ObjectToInstanciate: {fileID: 2635985071285661709, guid: 243aedac7568d7b448a860ea730a15a7,
     type: 3}
   LenghtOfTarget: 5
-  Speed: 1
-  startingtime: 6
+  Speed: 2
+  startingtime: 3
   instanciateposition: 0.6946
 --- !u!95 &4878630980873757458
 Animator:
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56fb3ecf7bedf84783d9b06a0dd86a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grassObj: {fileID: 9209644581247601795, guid: 1003a60da5ed1e74f9b9fbc3e1c4c8a3,
+  grassObj: {fileID: 9209644581247601795, guid: 00b38b0a7f693c245ae7795855e7017b,
     type: 3}
 --- !u!114 &6481743478509128467
 MonoBehaviour:

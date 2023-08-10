@@ -3496,6 +3496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c934f61911f91b64d99c8ba52c7c0f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin: {fileID: 7136495971748635956, guid: 89be6756531d81f4fbe5353b849d930e, type: 3}
 --- !u!114 &4975213294369971764
 MonoBehaviour:
   m_ObjectHideFlags: 0

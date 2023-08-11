@@ -13,7 +13,10 @@ public class MovementOfThrowtwo : MonoBehaviour
     }
     private void Update()
     {
-        transform.Translate(Vector3.left*speed*Time.deltaTime);
+        if (this.gameObject.transform.position.x >= 9)
+        {
+            transform.Translate(Vector3.left * speed * Time.deltaTime);
+        }
     }
     public void instanciateStone()
     {

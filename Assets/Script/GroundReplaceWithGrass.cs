@@ -17,8 +17,8 @@ public class GroundReplaceWithGrass : MonoBehaviour
     public void coin()
     {
         old = this.transform.gameObject;
-        var obj = Instantiate(coinObj, new Vector3(this.gameObject.transform.position.x, 0.381f, this.gameObject.transform.position.z),coinObj.transform.rotation);
-        obj.transform.parent = this.transform.parent;
+        //var obj = Instantiate(coinObj, new Vector3(this.gameObject.transform.position.x, 0.381f, this.gameObject.transform.position.z),coinObj.transform.rotation);
+        //obj.transform.parent = this.transform.parent;
         Destroy(old);
 
     }

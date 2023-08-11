@@ -1811,7 +1811,7 @@ Transform:
   m_GameObject: {fileID: 4150576937160069441}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.3, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2282884683168966547}
@@ -1857,9 +1857,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0813e714ff1052547a823fe8fe987632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrow: {fileID: 4865309214770636011, guid: 9a4fe10bd9bad744693ffeda304d2cbb, type: 3}
+  arrow: {fileID: 4865309214770636011, guid: 819934b18fda51e4da3e54d18b6de296, type: 3}
   speed: 0
-  positionSet: {x: 0.461, y: 0.7, z: -0.149}
+  positionSet: {x: 0.38, y: 0.4, z: -0.1}
 --- !u!54 &3576781094104622268
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699267b805a2c1243bc8ae5f666bda90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 200
 --- !u!114 &2365934418251708802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1938,7 +1938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56fb3ecf7bedf84783d9b06a0dd86a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grassObj: {fileID: 9209644581247601795, guid: 00b38b0a7f693c245ae7795855e7017b,
+  grassObj: {fileID: 9209644581247601795, guid: 1003a60da5ed1e74f9b9fbc3e1c4c8a3,
     type: 3}
   coinObj: {fileID: 7136495971748635956, guid: 89be6756531d81f4fbe5353b849d930e, type: 3}
 --- !u!1 &4160228286353197130

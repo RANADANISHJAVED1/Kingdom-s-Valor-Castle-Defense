@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   border: {fileID: 7562990906232457909}
+  cannonGrass: 0
 --- !u!114 &3082052883895007056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56fb3ecf7bedf84783d9b06a0dd86a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grassObj: {fileID: 9209644581247601795, guid: 00b38b0a7f693c245ae7795855e7017b,
+  grassObj: {fileID: 9209644581247601795, guid: 1003a60da5ed1e74f9b9fbc3e1c4c8a3,
     type: 3}
   coinObj: {fileID: 7136495971748635956, guid: 89be6756531d81f4fbe5353b849d930e, type: 3}
 --- !u!114 &8464787485557396930
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699267b805a2c1243bc8ae5f666bda90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 200
 --- !u!1001 &1544780893216116382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -159,17 +160,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 64e83f5642216704fa049e870445f509,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64e83f5642216704fa049e870445f509,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64e83f5642216704fa049e870445f509,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64e83f5642216704fa049e870445f509,
         type: 3}

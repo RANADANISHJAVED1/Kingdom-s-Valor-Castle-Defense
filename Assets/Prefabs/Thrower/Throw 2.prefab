@@ -3454,7 +3454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   stone: {fileID: 3651586843675346942, guid: a064b87c7d81d6f4496d90cf2099c832, type: 3}
-  positionInstanciate: {x: -0.06, y: 0.921}
+  positionInstanciate: {x: -0.06, y: 0.8}
 --- !u!54 &574919042418716265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3509,7 +3509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699267b805a2c1243bc8ae5f666bda90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1000
 --- !u!114 &1792863679590115917
 MonoBehaviour:
   m_ObjectHideFlags: 0

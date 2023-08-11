@@ -6,7 +6,7 @@ public class soliderRemasteredAnimation : MonoBehaviour
 {
     private Animator SoliderAnimation;
     public  GameObject knifeObj;
-    private int speed;
+    private float speed;
     private bool playOneTime;
     private bool diedBool;
     void Start()
@@ -39,7 +39,7 @@ public class soliderRemasteredAnimation : MonoBehaviour
         {
             instanciateKnife();
             SoliderAnimation.SetTrigger("Walking");
-            speed = 1;
+            speed = 0.25f;
         }
     }
     IEnumerator Speedzero()
@@ -54,7 +54,7 @@ public class soliderRemasteredAnimation : MonoBehaviour
     {
         if (!diedBool)
         {
-            var obj = Instantiate(knifeObj, new Vector3(this.transform.position.x - 0.461f, this.transform.position.y + 0.7f, this.transform.position.z + 0.149f), knifeObj.transform.rotation);
+            var obj = Instantiate(knifeObj, new Vector3(this.transform.position.x - 0.3f, this.transform.position.y + 0.35f, this.transform.position.z), knifeObj.transform.rotation);
             obj.transform.parent = this.transform.parent;
         }
     }

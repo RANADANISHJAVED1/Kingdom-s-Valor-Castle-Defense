@@ -13,7 +13,7 @@ public class SelectedTeamFeaturesActivator : MonoBehaviour
     public TextMeshProUGUI currencyText;
     private void Awake()
     {
-        currency = 150;
+        currency = 250;
         currencyText.text = currency.ToString();
         teamNumber = PlayerPrefs.GetInt("TeamNumber");
     }

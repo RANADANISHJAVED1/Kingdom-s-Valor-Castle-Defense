@@ -6,7 +6,7 @@ public class erikaArcherAnimationController : MonoBehaviour
 {
     private Animator erikaArcherController;
     public GameObject arrow;
-    public int speed;
+    public float speed;
     private bool diedBool;
     private bool playOneTime;
     public Vector3 positionSet;
@@ -46,9 +46,7 @@ public class erikaArcherAnimationController : MonoBehaviour
     void instanciateArrow()
     {
         if (!diedBool)
-        {
-           
-               
+        {    
             var obj = Instantiate(arrow, new Vector3(this.transform.position.x+positionSet.x, this.transform.position.y+positionSet.y, this.transform.position.z+positionSet.z), arrow.transform.rotation);
             obj.transform.parent = this.transform.parent;
         }
@@ -58,7 +56,7 @@ public class erikaArcherAnimationController : MonoBehaviour
         yield return new WaitForSeconds(2);
         if (!diedBool)
         {
-            speed = 1;
+            speed = 0.3f;
             erikaArcherController.SetTrigger("walking");
         }
     }

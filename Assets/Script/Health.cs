@@ -7,6 +7,14 @@ public class Health : MonoBehaviour
     public int health;
     public void healthDecrement(int num)
     {
-        health = health + num;
+        if (health + num < 0)
+        {
+            health = 0;
+        }
+        else {
+            health = health + num;
+        }
+        
+        
     }
 }

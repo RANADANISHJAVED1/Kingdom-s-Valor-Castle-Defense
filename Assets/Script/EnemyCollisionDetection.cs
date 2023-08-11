@@ -14,16 +14,112 @@ public class EnemyCollisionDetection : MonoBehaviour
     {
         if(other.gameObject.CompareTag("PlayerDestroy"))
         {
-            Destroy(other.gameObject);
-            if(this.gameObject.name == "Thrower 1(Clone)")
+            if(other.gameObject.name == "CANNON FIRE BALL(Clone)" || other.gameObject.name == "cannon ball Prefab(Clone)")
             {
-                this.gameObject.GetComponent<Health>().healthDecrement(-5);
-                if (this.gameObject.GetComponent<Health>().health<=0)
+                Destroy(other.gameObject);
+                if (this.gameObject.name == "Throw 2(Clone)")
                 {
-                    StartCoroutine(objDeletionCaller());
+                    this.gameObject.GetComponent<Health>().healthDecrement(-120);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        StartCoroutine(objDeletionCaller());
+                    }
                 }
             }
-            else if(this.gameObject.name == "soldierRemastered(Clone)")
+            else if (other.gameObject.name == "arrowPlayer(Clone)")
+            {
+                Destroy(other.gameObject);
+                if (this.gameObject.name == "Throw 2(Clone)")
+                {
+                    this.gameObject.GetComponent<Health>().healthDecrement(-40);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        StartCoroutine(objDeletionCaller());
+                    }
+                }
+                else if (this.gameObject.name == "soldierRemastered(Clone)")
+                {
+                    this.gameObject.GetComponent<Health>().healthDecrement(-40);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        this.gameObject.GetComponent<soliderRemasteredAnimation>().died();
+                        StartCoroutine(objDeletionCaller());
+                    }
+                }
+                else if (this.gameObject.name == "soldier2Remastered (1)(Clone)")
+                {
+                    this.gameObject.GetComponent<Health>().healthDecrement(-40);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        this.gameObject.GetComponent<SoldiderTwoAnimationAndMovement>().died();
+                        StartCoroutine(objDeletionCaller());
+                    }
+                }
+            }
+            else if (other.gameObject.name == "Knife For Static(Clone)")
+            {
+                Destroy(other.gameObject);
+                if (this.gameObject.name == "Throw 2(Clone)")
+                {
+                    this.gameObject.GetComponent<Health>().healthDecrement(-20);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        StartCoroutine(objDeletionCaller());
+                    }
+                }
+                else if (this.gameObject.name == "Erika Archer With Bow Arrow(Clone)")
+                {
+                    this.gameObject.GetComponent<Health>().healthDecrement(-5);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        this.gameObject.GetComponent<erikaArcherAnimationController>().dying();
+                        StartCoroutine(objDeletionCaller());
+                    }
+                }
+                else if (this.gameObject.name == "blue soldier Enemy(Clone)")
+                {
+                    this.gameObject.GetComponent<Health>().healthDecrement(-5);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        this.gameObject.GetComponent<BlueEnemyAnimationController>().died();
+                        StartCoroutine(objDeletionCaller());
+                    }
+                }
+
+            }
+            else if (other.gameObject.name == "Playerspear2(Clone)")
+            {
+                Destroy(other.gameObject);
+                if (this.gameObject.name == "Throw 2(Clone)")
+                {
+                    this.gameObject.GetComponent<Health>().healthDecrement(-40);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        StartCoroutine(objDeletionCaller());
+                    }
+                }
+                else if (this.gameObject.name == "Erika Archer With Bow Arrow(Clone)")
+                {
+                    this.gameObject.GetComponent<Health>().healthDecrement(-40);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        this.gameObject.GetComponent<erikaArcherAnimationController>().dying();
+                        StartCoroutine(objDeletionCaller());
+                    }
+                }
+                else if (this.gameObject.name == "blue soldier Enemy(Clone)")
+                {
+                    this.gameObject.GetComponent<Health>().healthDecrement(-40);
+                    if (this.gameObject.GetComponent<Health>().health <= 0)
+                    {
+                        this.gameObject.GetComponent<BlueEnemyAnimationController>().died();
+                        StartCoroutine(objDeletionCaller());
+                    }
+                }
+
+            }
+            
+           /* if (this.gameObject.name == "soldierRemastered(Clone)")
             {
                 this.gameObject.GetComponent<Health>().healthDecrement(-5);
                 if (this.gameObject.GetComponent<Health>().health <= 0)
@@ -66,7 +162,7 @@ public class EnemyCollisionDetection : MonoBehaviour
                     this.gameObject.GetComponent<BlueEnemyAnimationController>().died();
                     StartCoroutine(objDeletionCaller());
                 }
-            }
+            }*/
         }
        /** else if (other.gameObject.CompareTag("PLAYER"))
         {

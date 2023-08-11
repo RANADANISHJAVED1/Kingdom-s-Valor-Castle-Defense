@@ -282,10 +282,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstWaveTime: 10
-  secondWaveTime: 20
-  thirdWaveTime: 25
-  firstWaveEnemyNumber: 4
-  secondWaveEnemyNumber: 4
+  secondWaveTime: 30
+  thirdWaveTime: 30
+  firstWaveEnemyNumber: 5
+  secondWaveEnemyNumber: 5
   thirdWaveEnemyNumber: 5
 --- !u!1 &197063723
 GameObject:
@@ -659,8 +659,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstWaveTime: 10
-  secondWaveTime: 20
-  thirdWaveTime: 25
+  secondWaveTime: 30
+  thirdWaveTime: 30
   firstWaveEnemyNumber: 5
   secondWaveEnemyNumber: 7
   thirdWaveEnemyNumber: 7
@@ -1243,8 +1243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstWaveTime: 10
-  secondWaveTime: 20
-  thirdWaveTime: 20
+  secondWaveTime: 30
+  thirdWaveTime: 30
   firstWaveEnemyNumber: 8
   secondWaveEnemyNumber: 8
   thirdWaveEnemyNumber: 9
@@ -1913,8 +1913,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstWaveTime: 10
-  secondWaveTime: 20
-  thirdWaveTime: 25
+  secondWaveTime: 30
+  thirdWaveTime: 30
   firstWaveEnemyNumber: 8
   secondWaveEnemyNumber: 8
   thirdWaveEnemyNumber: 8
@@ -3054,6 +3054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1668566788}
   - component: {fileID: 1668566787}
+  - component: {fileID: 1668566789}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3090,6 +3091,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1668566789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668566786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10661d095da13db43ab14543937fbd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1680203901
 GameObject:
   m_ObjectHideFlags: 0

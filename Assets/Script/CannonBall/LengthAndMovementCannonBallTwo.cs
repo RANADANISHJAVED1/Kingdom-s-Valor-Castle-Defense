@@ -16,10 +16,10 @@ public class LengthAndMovementCannonBallTwo : MonoBehaviour
     private void FixedUpdate()
     {
         transform.Translate(Vector3.right * speed * Time.deltaTime);
-        if (transform.position.x - instanciatePosition.x >= length)
+        /*if (transform.position.x - instanciatePosition.x >= length)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
     /*private void OnTriggerEnter(Collider other)
     {

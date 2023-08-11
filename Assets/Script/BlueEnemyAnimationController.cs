@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlueEnemyAnimationController : MonoBehaviour
 {
     private Animator blueEnemyAnimator;
-    private int speed;
+    private float speed;
     bool diedBool;
     bool callOneTime;
     private void Start()
@@ -13,7 +13,7 @@ public class BlueEnemyAnimationController : MonoBehaviour
         diedBool = false;
         callOneTime = false;
         blueEnemyAnimator = this.gameObject.GetComponent<Animator>();
-        InvokeRepeating("startAnimation",0,4.2f);
+        InvokeRepeating("startAnimation",0,2.4f);
     }
     private void FixedUpdate()
     {
@@ -26,28 +26,18 @@ public class BlueEnemyAnimationController : MonoBehaviour
     {
         if (!diedBool)
         {
-            speed = 0;
-            blueEnemyAnimator.SetTrigger("AttackOne");
-            StartCoroutine(attackTwo());
-            StartCoroutine(walk());
-        }
-    }
-    IEnumerator attackTwo()
-    {
-        yield return new WaitForSeconds(2.3f);
-        if (!diedBool)
-        {
-            blueEnemyAnimator.SetTrigger("AttackTwo");
-
-        }
-    }
-    IEnumerator walk()
-    {
-        yield return new WaitForSeconds(3.4f);
-        if (!diedBool)
-        {
+            speed = 0.5f;
             blueEnemyAnimator.SetTrigger("Walk");
-            speed = 2;
+            StartCoroutine("attack");
+        }
+    }
+    IEnumerator attack()
+    {
+        yield return new WaitForSeconds(1);
+        if (!diedBool)
+        {
+            blueEnemyAnimator.SetTrigger("Attack");
+            speed = 0;
         }
     }
     public void died()

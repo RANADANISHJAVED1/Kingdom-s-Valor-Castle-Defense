@@ -37,7 +37,7 @@ public class SitaticKnifeThrow : MonoBehaviour
     {
         if (!DiedBool)
         {
-            var obj = Instantiate(knifeObj, new Vector3(this.transform.position.x + 0.461f, this.transform.position.y + 0.7f, this.transform.position.z + 0.149f), knifeObj.transform.rotation);
+            var obj = Instantiate(knifeObj, new Vector3(this.transform.position.x+ 0.15f, this.transform.position.y + 0.43f, this.transform.position.z-0.1f), knifeObj.transform.rotation);
             obj.transform.parent = this.transform.parent;
         }
     }

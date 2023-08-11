@@ -5,6 +5,7 @@ using UnityEngine;
 public class BorderOnOff : MonoBehaviour
 {
     public GameObject border;
+    public bool cannonGrass;
     private void Start()
     {
         border.SetActive(false);
@@ -15,7 +16,6 @@ public class BorderOnOff : MonoBehaviour
     }
     public void BorderOff()
     {
-        Debug.Log("CALLED");
         border.SetActive(false);
     }
 }

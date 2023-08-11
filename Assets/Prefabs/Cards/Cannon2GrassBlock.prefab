@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   border: {fileID: 7199103391274274671}
+  cannonGrass: 0
 --- !u!114 &219595508454488731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,8 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56fb3ecf7bedf84783d9b06a0dd86a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grassObj: {fileID: 9209644581247601795, guid: 00b38b0a7f693c245ae7795855e7017b,
+  grassObj: {fileID: 9209644581247601795, guid: 1003a60da5ed1e74f9b9fbc3e1c4c8a3,
     type: 3}
+  coinObj: {fileID: 0}
 --- !u!114 &6481743478509128467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699267b805a2c1243bc8ae5f666bda90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 1000
 --- !u!1001 &2882690844587380686
 PrefabInstance:
   m_ObjectHideFlags: 0

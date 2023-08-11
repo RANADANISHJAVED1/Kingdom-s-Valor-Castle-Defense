@@ -16,9 +16,9 @@ public class movementOfArrow : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up* speed * Time.deltaTime);
-        if (this.transform.position.x - initialPosition.x > length)
+        /*if (this.transform.position.x - initialPosition.x > length)
         {
             Destroy(this.gameObject);
-        }
+        }*/
     }
 }

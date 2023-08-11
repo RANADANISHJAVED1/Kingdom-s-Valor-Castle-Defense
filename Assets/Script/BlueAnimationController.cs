@@ -8,6 +8,7 @@ public class BlueAnimationController : MonoBehaviour
     private bool diedBool;
     private bool callOneTime;
     private float speed;
+  
     void Start()
     {
         callOneTime = false;
@@ -26,37 +27,22 @@ public class BlueAnimationController : MonoBehaviour
     {
         if (!diedBool)
         {
+           
+            
+            speed = 0.5f;
+            BlueAnimController.SetTrigger("Walk");
+            StartCoroutine(attack());
+        }
+    }
+    IEnumerator attack()
+    {
+        yield return new WaitForSeconds(1);
+        if (!diedBool)
+        {
             speed = 0;
-            BlueAnimController.SetTrigger("AttackOne");
-            StartCoroutine(endAttack());
-            StartCoroutine(walk());
-            StartCoroutine(walkTwo());
+            BlueAnimController.SetTrigger("Attack");
         }
-    }
-    IEnumerator endAttack()
-    {
-        yield return new WaitForSeconds(0.5f);
-        if (!diedBool)
-        {
-            BlueAnimController.SetTrigger("AttackTwo");
-        }
-    }
-    IEnumerator walk()
-    {
-        yield return new WaitForSeconds(1.6f);
-        if (!diedBool)
-        {
-            BlueAnimController.SetTrigger("Walk");
-            speed = 0.7f;
-        }
-    }
-    IEnumerator walkTwo()
-    {
-        yield return new WaitForSeconds(2f);
-        if (!diedBool)
-        {
-            BlueAnimController.SetTrigger("Walk");
-        }
+       
     }
     public void died()
     {

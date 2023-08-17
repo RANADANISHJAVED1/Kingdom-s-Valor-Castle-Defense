@@ -39,7 +39,7 @@ public class SoldiderTwoAnimationAndMovement : MonoBehaviour
         if (!diedBool)
         {
             solider2animator.SetTrigger("Walk");
-            speed = 0.3f;
+            speed = 0.1f;
         }
     }
     IEnumerator Attack()
@@ -56,7 +56,8 @@ public class SoldiderTwoAnimationAndMovement : MonoBehaviour
         yield return new WaitForSeconds(2f);
       if(!diedBool)
         {
-            Instantiate(naiza, new Vector3(this.transform.position.x + addInPosition.x, this.transform.position.y + addInPosition.y, this.transform.position.z + addInPosition.z), naiza.transform.rotation);
+            var obj = Instantiate(naiza, new Vector3(this.transform.position.x + addInPosition.x, this.transform.position.y + addInPosition.y, this.transform.position.z + addInPosition.z), naiza.transform.rotation);
+            obj.transform.parent = this.transform.parent;
         }
     }
     public void died()
@@ -67,6 +68,7 @@ public class SoldiderTwoAnimationAndMovement : MonoBehaviour
             solider2animator.SetTrigger("Dying");
             speed = 0;
             playOneTime = true;
+            StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().bloodBonesExplisionEnemy(new Vector3(this.gameObject.transform.position.x - 0.2f, this.transform.position.y, this.transform.position.z), this.gameObject));
         }
     }
 }

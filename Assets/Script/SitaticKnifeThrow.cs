@@ -48,6 +48,7 @@ public class SitaticKnifeThrow : MonoBehaviour
             DiedBool = true;
             SoliderAnimation.SetTrigger("Died");
             callOneTime = true;
+            StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().bloodBonesExplision(new Vector3(this.gameObject.transform.position.x - 0.2f, this.transform.position.y, this.transform.position.z)));
         }
     }
 }

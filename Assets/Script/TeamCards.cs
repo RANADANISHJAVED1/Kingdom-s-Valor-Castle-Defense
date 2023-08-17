@@ -4,6 +4,5 @@ using UnityEngine;
 
 public class TeamCards : MonoBehaviour
 {
-    public GameObject[] teamOneCards;
-    public GameObject[] teamTwoCards;
+    public GameObject[] cards;
 }

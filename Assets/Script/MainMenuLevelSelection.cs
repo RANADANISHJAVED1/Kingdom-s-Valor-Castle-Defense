@@ -1,22 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuLevelSelection : MonoBehaviour
 {
-    public int firstWaveTime;
-    public int secondWaveTime;
-    public int thirdWaveTime;
-    public int firstWaveEnemyNumber;
-    public int secondWaveEnemyNumber;
-    public int thirdWaveEnemyNumber;
-    public void setValues()
+    public int level;
+    public void setLevel()
     {
-        PlayerPrefs.SetInt("firstWaveTime", firstWaveTime);
-        PlayerPrefs.SetInt("secondWaveTime", secondWaveTime);
-        PlayerPrefs.SetInt("thirdWaveTime", thirdWaveTime);
-        PlayerPrefs.SetInt("firstWaveEnemyNumber", firstWaveEnemyNumber);
-        PlayerPrefs.SetInt("secondWaveEnemyNumber", secondWaveEnemyNumber);
-        PlayerPrefs.SetInt("thirdWaveEnemyNumber", thirdWaveEnemyNumber);
+        PlayerPrefs.SetInt("LEVEL", level);
+        SceneManager.LoadScene("GamePlayScene");
     }
 }

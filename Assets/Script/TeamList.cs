@@ -4,10 +4,38 @@ using UnityEngine;
 
 public class TeamList : MonoBehaviour
 {
-    public GameObject TeamOneWaveOne;
-    public GameObject TeamOneWaveTwo;
-    public GameObject TeamOneWaveThree;
-    public GameObject TeamTwoWaveOne;
-    public GameObject TeamTwoWaveTwo;
-    public GameObject TeamTwoWaveThree;
+    public GameObject waveOne;
+    public GameObject[] enemyList;
+    [HideInInspector]
+    public GameObject waveTwo;
+    [HideInInspector]
+    public GameObject waveThree;
+    private int level;
+    private void Start()
+    { level = PlayerPrefs.GetInt("LEVEL");
+        if (level == 1)
+        {
+            waveTwo = enemyList[0];
+            waveThree = enemyList[1];
+        }
+        else if (level == 2)
+        {
+            waveTwo = enemyList[0];
+            waveThree = enemyList[2];
+        }
+        else if (level == 3)
+        {
+            waveTwo = enemyList[0];
+            waveThree = enemyList[1];
+        }
+        else if (level == 4)
+        {
+            waveTwo = enemyList[1];
+            waveThree = enemyList[0];
+        }
+    }
+    void levelFeatures()
+    {
+
+    }
 }

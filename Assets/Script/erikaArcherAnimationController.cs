@@ -56,7 +56,7 @@ public class erikaArcherAnimationController : MonoBehaviour
         yield return new WaitForSeconds(2);
         if (!diedBool)
         {
-            speed = 0.3f;
+            speed = 0.1f;
             erikaArcherController.SetTrigger("walking");
         }
     }
@@ -74,8 +74,9 @@ public class erikaArcherAnimationController : MonoBehaviour
         {
             diedBool = true;
             speed = 0;
-            playOneTime = true;
             erikaArcherController.SetTrigger("Dying");
+            StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().bloodBonesExplisionEnemy(new Vector3(this.gameObject.transform.position.x - 0.2f, this.transform.position.y, this.transform.position.z), this.gameObject));
+            playOneTime = true;
         }
     }
 }

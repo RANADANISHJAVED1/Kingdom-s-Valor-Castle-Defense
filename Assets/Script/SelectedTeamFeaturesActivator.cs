@@ -6,114 +6,94 @@ using TMPro;
 
 public class SelectedTeamFeaturesActivator : MonoBehaviour
 {
-    public GameObject[] teamOne;
-    public GameObject[] teamTwo;
+    public GameObject[] ButtonL1;
+    public GameObject[] ButtonL2;
+    public GameObject[] ButtonL3;
+    public int[] currencyList;
+    private  GameObject buttonOne;
+    private  GameObject buttonTwo;
+    private  GameObject buttonThree;
     public int currency;
-    private int teamNumber;
     public TextMeshProUGUI currencyText;
+    public int level;
     private void Awake()
     {
-        currency = 250;
+        level = PlayerPrefs.GetInt("LEVEL");
+        currency = currencyList[level-1];
         currencyText.text = currency.ToString();
-        teamNumber = PlayerPrefs.GetInt("TeamNumber");
+        
     }
     private void Start()
     {
-        for (int i = 0; i < teamOne.Length; i++)
+        for (int i = 0; i < ButtonL1.Length; i++)
         {
-            teamOne[i].SetActive(false);
+            ButtonL1[i].SetActive(false);
         }
-        for (int i = 0; i < teamTwo.Length; i++)
+        for (int i = 0; i < ButtonL2.Length; i++)
         {
-            teamTwo[i].SetActive(false);
+            ButtonL2[i].SetActive(false);
         }
-        teamNumber = PlayerPrefs.GetInt("TeamNumber");
-        activationFunction();
-    }
-    void activationFunction()
-    {
-        /*if (teamNumber == 1)
+        for (int i = 0; i < ButtonL3.Length; i++)
         {
-            for (int i = 0; i < teamOne.Length; i++)
-            {
-                teamOne[i].SetActive(true);
-            }
+            ButtonL3[i].SetActive(false);
         }
-        if (teamNumber == 2)
-        {
-            for (int i = 0; i < teamTwo.Length; i++)
-            {
-                teamTwo[i].SetActive(true);
-            }
-        }*/
+        levelFeatures();
         checkButtonActivation();
+    }
+    void levelFeatures()
+    {
+        if (level == 1)
+        {
+            buttonOne = ButtonL1[0];
+            buttonTwo = ButtonL2[0];
+            buttonThree = ButtonL3[1];
+        }
+        else if (level == 2)
+        {
+            buttonOne = ButtonL1[0];
+            buttonTwo = ButtonL2[0];
+            buttonThree = ButtonL3[1];
+        }
+        else if (level == 3)
+        {
+            buttonOne = ButtonL1[1];
+            buttonTwo = ButtonL2[0];
+            buttonThree = ButtonL3[1];
+        }
+        else if (level == 4)
+        {
+            buttonOne = ButtonL1[1];
+            buttonTwo = ButtonL2[1];
+            buttonThree = ButtonL3[2];
+        }
+
+
     }
     public void checkButtonActivation()
     {
         if (currency >= 25 && currency <30)
         {
-            if (teamNumber == 1)
-            {
-                teamOne[0].SetActive(true);
-                teamOne[1].SetActive(false);
-                teamOne[2].SetActive(false);
-
-            }
-            else if (teamNumber == 2)
-            {
-                teamTwo[0].SetActive(true);
-                teamTwo[1].SetActive(false);
-                teamTwo[2].SetActive(false);
-
-            }
+            buttonOne.SetActive(true);
+            buttonTwo.SetActive(false);
+            buttonThree.SetActive(false);
         }
         else if (currency >= 30 && currency < 50)
         {
-            if (teamNumber == 1)
-            {
-                teamOne[0].SetActive(true);
-                teamOne[1].SetActive(true);
-                teamOne[2].SetActive(false);
-
-            }
-            else if (teamNumber == 2)
-            {
-                teamTwo[0].SetActive(true);
-                teamTwo[1].SetActive(true);
-                teamTwo[2].SetActive(false);
-            }
+            buttonOne.SetActive(true);
+            buttonTwo.SetActive(true);
+            buttonThree.SetActive(false);
         }
         else if (currency >= 50)
         {
-            if (teamNumber == 1)
-            {
-                teamOne[0].SetActive(true);
-                teamOne[1].SetActive(true);
-                teamOne[2].SetActive(true);
-
-            }
-            else if (teamNumber == 2)
-            {
-                teamTwo[0].SetActive(true);
-                teamTwo[1].SetActive(true);
-                teamTwo[2].SetActive(true);
-            }
+            buttonOne.SetActive(true);
+            buttonTwo.SetActive(true);
+            buttonThree.SetActive(true);
         }
         else if (currency < 25)
         {
-            if (teamNumber == 1)
-            {
-                teamOne[0].SetActive(false);
-                teamOne[1].SetActive(false);
-                teamOne[2].SetActive(false);
-
-            }
-            else if (teamNumber == 2)
-            {
-                teamTwo[0].SetActive(false);
-                teamTwo[1].SetActive(false);
-                teamTwo[2].SetActive(false);
-            }
+            buttonOne.SetActive(false);
+            buttonTwo.SetActive(false);
+            buttonThree.SetActive(false);
         }
         currencyText.text = currency.ToString();
     }
@@ -124,5 +104,6 @@ public class SelectedTeamFeaturesActivator : MonoBehaviour
     public void currencyDecrese(int n)
     {
         currency = currency + n;
+        checkButtonActivation();
     }
 }

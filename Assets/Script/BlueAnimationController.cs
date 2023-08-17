@@ -29,7 +29,7 @@ public class BlueAnimationController : MonoBehaviour
         {
            
             
-            speed = 0.5f;
+            speed = 0.3f;
             BlueAnimController.SetTrigger("Walk");
             StartCoroutine(attack());
         }
@@ -51,6 +51,7 @@ public class BlueAnimationController : MonoBehaviour
             diedBool = true;
             BlueAnimController.SetTrigger("Dying");
             callOneTime = true;
+            StartCoroutine( GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().bloodBonesExplision(new Vector3(this.gameObject.transform.position.x - 0.2f, this.transform.position.y, this.transform.position.z)));
         }
     }
     

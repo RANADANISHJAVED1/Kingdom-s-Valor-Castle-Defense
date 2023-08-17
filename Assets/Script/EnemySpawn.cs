@@ -12,27 +12,32 @@ public class EnemySpawn : MonoBehaviour
     private int firstWaveEnemyNumbers;
     private int secondWaveEnemyNumbers;
     private int thirdWaveEnemyNumbers;
-    private int teamNumberAsEnemy;
     public int loop;
     float time;
-    int zPositionNotRandomForFirst = 1;
-    int zPositionNotRandomForSecond = 1;
-    int zPositionNotRandomForThird = 1;
-    private float secWaitTime=0;
+    int zPositionNotRandomForFirst;
+    int zPositionNotRandomForSecond;
+    int zPositionNotRandomForThird;
+    float unRandomX;
+    private int loopChecker;
+    private float secWaitTime = 0;
+    private float TimeOfFirstWaveDefiner = 5;
+    private int thirdWaveChecker;
+    private int thirdWaveInnerIncrementator;
 
     private void Start()
     {
+        thirdWaveInnerIncrementator = 0;
         zPositionNotRandomForFirst = 1;
         zPositionNotRandomForSecond = 2;
         zPositionNotRandomForThird = 3;
         teamList = this.gameObject.GetComponent<TeamList>();
-        teamNumberAsEnemy = PlayerPrefs.GetInt("TeamNumber");
         firstWaveTime = PlayerPrefs.GetInt("firstWaveTime");
         secondWaveTime = PlayerPrefs.GetInt("secondWaveTime");
         thirdWaveTime = PlayerPrefs.GetInt("thirdWaveTime");
         firstWaveEnemyNumbers = PlayerPrefs.GetInt("firstWaveEnemyNumber");
         secondWaveEnemyNumbers = PlayerPrefs.GetInt("secondWaveEnemyNumber");
         thirdWaveEnemyNumbers = PlayerPrefs.GetInt("thirdWaveEnemyNumber");
+        thirdWaveChecker = thirdWaveEnemyNumbers;
     }
     private void Update()
     {
@@ -45,7 +50,18 @@ public class EnemySpawn : MonoBehaviour
         for (; loop > 0 && time <= 0; loop--)
         {
             StartCoroutine(randomSpawnEnemy());
-            secWaitTime = secWaitTime + 2.2f;   
+            if (firstWaveTime <= 0 && secondWaveTime > 0 && thirdWaveTime > 0)
+            {
+                secWaitTime = 0;
+            }
+            else if(firstWaveTime<=0 && secondWaveTime<=0 && thirdWaveTime > 0)
+            {
+                secWaitTime = secWaitTime + 2.2f;
+            }
+            else if (firstWaveTime<=0 && secondWaveTime<= 0 && thirdWaveTime <= 0)
+            {
+                secWaitTime = secWaitTime + 0.2f;
+            }
         }
     }
     private void waveTimeUpdater()
@@ -84,75 +100,67 @@ public class EnemySpawn : MonoBehaviour
         {
             time = thirdWaveTime;
             loop = thirdWaveEnemyNumbers;
+            loopChecker = loop;
             secWaitTime = 0;
         }
     }
     IEnumerator randomSpawnEnemy()
     {
-        
+
         yield return new WaitForSeconds(secWaitTime);
-        if (teamNumberAsEnemy == 1)
+
+        if (firstWaveTime < 0 && secondWaveTime > 0)
         {
-            if (firstWaveTime < 0 && secondWaveTime > 0)
+            if (zPositionNotRandomForFirst <= 5)
             {
-                if (zPositionNotRandomForFirst <= 5)
-                {
-                    var obj = Instantiate(teamList.TeamOneWaveOne, new Vector3(12, 0, zPositionNotRandomForFirst), teamList.TeamOneWaveOne.transform.rotation);
-                    obj.transform.parent = EnemyListFatherObj.transform;
-                    zPositionNotRandomForFirst = numberSwitch(zPositionNotRandomForFirst);
-                }
+                var obj = Instantiate(teamList.waveOne, new Vector3(10, 0, zPositionNotRandomForFirst), teamList.waveOne.transform.rotation);
+                obj.gameObject.GetComponent<MovementOfThrowtwo>().timeOfCoritine = TimeOfFirstWaveDefiner;
+                obj.gameObject.GetComponent<MovementOfThrowtwo>().timeSet = true;
+                obj.transform.parent = EnemyListFatherObj.transform;
+                zPositionNotRandomForFirst = numberSwitch(zPositionNotRandomForFirst);
+                TimeOfFirstWaveDefiner = TimeOfFirstWaveDefiner + 2.2f;
             }
-            else if (firstWaveTime < 0 && secondWaveTime < 0 && thirdWaveTime > 0)
+        }
+        else if (firstWaveTime < 0 && secondWaveTime < 0 && thirdWaveTime > 0)
+        {
+            if (zPositionNotRandomForSecond <= 5)
             {
-                if (zPositionNotRandomForSecond <= 5)
-                {
-                    var obj = Instantiate(teamList.TeamOneWaveTwo, new Vector3(8, 0, zPositionNotRandomForSecond), teamList.TeamOneWaveTwo.transform.rotation);
-                    obj.transform.parent = EnemyListFatherObj.transform;
-                    zPositionNotRandomForSecond = numberSwitch(zPositionNotRandomForSecond);
-                }
+                var obj = Instantiate(teamList.waveTwo, new Vector3(8, 0, zPositionNotRandomForSecond), teamList.waveTwo.transform.rotation);
+                obj.transform.parent = EnemyListFatherObj.transform;
+                zPositionNotRandomForSecond = numberSwitch(zPositionNotRandomForSecond);
             }
-            else if (firstWaveTime < 0 && secondWaveTime < 0 && thirdWaveTime < 0)
+        }
+        else if (firstWaveTime < 0 && secondWaveTime < 0 && thirdWaveTime < 0)
+        {
+            if (zPositionNotRandomForThird <= 5)
             {
-                if (zPositionNotRandomForThird <= 5)
+                
+                if (loopChecker > 10)
                 {
-                    var obj = Instantiate(teamList.TeamOneWaveThree, new Vector3(8, 0, zPositionNotRandomForThird), teamList.TeamOneWaveThree.transform.rotation);
-                    obj.transform.parent = EnemyListFatherObj.transform;
-                    zPositionNotRandomForThird = numberSwitch(zPositionNotRandomForThird);
+                    unRandomX = 6;
+                    loopChecker--;
+                }
+                else if(loopChecker>5 && loopChecker <= 10)
+                {
+                    unRandomX = 7;
+                    loopChecker--;
+                }
+                else if (loopChecker >= 0 && loopChecker<= 5)
+                {
+                    unRandomX = 8;
+                    loopChecker--;
+                }
+                var obj = Instantiate(teamList.waveThree, new Vector3(unRandomX, 0, zPositionNotRandomForThird), teamList.waveThree.transform.rotation);
+                obj.transform.parent = EnemyListFatherObj.transform;
+                zPositionNotRandomForThird = numberSwitch(zPositionNotRandomForThird);
+                thirdWaveInnerIncrementator++;
+                if (thirdWaveInnerIncrementator == thirdWaveChecker)
+                {
+                    GameObject.Find("EnemyListSpawned").GetComponent<WinLogic>().complete = true;
                 }
             }
         }
-        else if (teamNumberAsEnemy == 2)
-        {
-            if (firstWaveTime < 0 && secondWaveTime > 0)
-            {
-                if (zPositionNotRandomForFirst <= 5)
-                {
-                    var obj = Instantiate(teamList.TeamTwoWaveOne, new Vector3(15, 0, zPositionNotRandomForFirst), teamList.TeamTwoWaveOne.transform.rotation);
-                    obj.transform.parent = EnemyListFatherObj.transform;
-                    zPositionNotRandomForFirst = numberSwitch(zPositionNotRandomForFirst);
-                    
-                }
-            }
-            else if (firstWaveTime < 0 && secondWaveTime < 0 && thirdWaveTime > 0)
-            {
-                if (zPositionNotRandomForSecond <= 5)
-                {
-                    var obj = Instantiate(teamList.TeamTwoWaveTwo, new Vector3(8, 0, zPositionNotRandomForSecond), teamList.TeamTwoWaveTwo.transform.rotation);
-                    obj.transform.parent = EnemyListFatherObj.transform;
-                    zPositionNotRandomForSecond = numberSwitch(zPositionNotRandomForSecond);
-                    
-                }
-            }
-            else if (firstWaveTime < 0 && secondWaveTime < 0 && thirdWaveTime < 0)
-            {
-                if (zPositionNotRandomForThird <= 5)
-                {
-                    var obj = Instantiate(teamList.TeamTwoWaveThree, new Vector3(8, 0, zPositionNotRandomForThird), teamList.TeamTwoWaveThree.transform.rotation);
-                    obj.transform.parent = EnemyListFatherObj.transform;
-                    zPositionNotRandomForThird = numberSwitch(zPositionNotRandomForThird);
-                }
-            }
-        }
+
     }
     int numberSwitch(int n)
     {

@@ -22,7 +22,6 @@ public class GrassInstanciate : MonoBehaviour
     private bool obj3;
     private bool obj4;
     private bool obj5;
-    private bool obj6;
     void Start()
     {
         /** for(int i = 0; i < row * column; i++)
@@ -36,7 +35,6 @@ public class GrassInstanciate : MonoBehaviour
         obj3 = false;
         obj4 = false;
         obj5 = false;
-        obj6 = false;
     }
 
     // Update is called once per frame
@@ -55,7 +53,7 @@ public class GrassInstanciate : MonoBehaviour
                 {
                     if (hit.transform.tag == "GRASS")
                     {
-                        if (obj5)
+                        if (obj2)
                         {
                             hitted = hit.transform.gameObject;
                             var obj = Instantiate(creatingObject, hitted.transform.position, Quaternion.identity);
@@ -65,7 +63,7 @@ public class GrassInstanciate : MonoBehaviour
                             borderOf();
                             AddCoinsAndOffButton();
                         }
-                        else if(obj2 || obj3 || obj6)
+                        else if(obj3 || obj5 )
                         {
                             hitted = hit.transform.gameObject;
                             var obj = Instantiate(creatingObject,hitted.transform.position,creatingObject.transform.rotation);
@@ -149,12 +147,7 @@ public class GrassInstanciate : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<SelectedTeamFeaturesActivator>().checkButtonActivation();
             obj5 = false;
         }
-        else if (obj6)
-        {
-            GameObject.Find("GameManager").GetComponent<SelectedTeamFeaturesActivator>().currencyDecrese(-50);
-            GameObject.Find("GameManager").GetComponent<SelectedTeamFeaturesActivator>().checkButtonActivation();
-            obj6 = false;
-        }
+        
     }
     public void firstObj()
     {
@@ -165,15 +158,14 @@ public class GrassInstanciate : MonoBehaviour
             borderOf();
 
         }
-        creatingObject = teamCards.teamOneCards[0];
+        creatingObject = teamCards.cards[0];
         Creating = true;
-        borderOn();
         obj1 = true;
         obj2 = false;
         obj3 = false;
         obj4 = false;
         obj5 = false;
-        obj6 = false;
+        borderOn();
     }
     public void secondObj()
     {
@@ -184,15 +176,15 @@ public class GrassInstanciate : MonoBehaviour
             borderOf();
 
         }
-        creatingObject = teamCards.teamOneCards[1];
+        creatingObject = teamCards.cards[1];
         Creating = true;
-        borderOn();
         obj1 = false;
         obj2 = true;
         obj3 = false;
         obj4 = false;
         obj5 = false;
-        obj6 = false;
+        
+        borderOn();
     }
     public void thirdObj()
     {
@@ -203,15 +195,15 @@ public class GrassInstanciate : MonoBehaviour
             borderOf();
 
         }
-        creatingObject = teamCards.teamOneCards[2];
+        creatingObject = teamCards.cards[2];
         Creating = true;
-        borderOn();
         obj1 = false;
         obj2 = false;
         obj3 = true;
         obj4 = false;
         obj5 = false;
-        obj6 = false;
+        
+        borderOn();
     }
     public void fourObj()
     {
@@ -221,15 +213,15 @@ public class GrassInstanciate : MonoBehaviour
             Creating = false;
             borderOf();
         }
-        creatingObject = teamCards.teamTwoCards[0];
+        creatingObject = teamCards.cards[3];
         Creating = true;
-        borderOn();
         obj1 = false;
         obj2 = false;
         obj3 = false;
         obj4 = true;
         obj5 = false;
-        obj6 = false;
+        
+        borderOn();
     }
     public void fiveObj()
     {
@@ -239,33 +231,15 @@ public class GrassInstanciate : MonoBehaviour
             Creating = false;
             borderOf();
         }
-        creatingObject = teamCards.teamTwoCards[1];
+        creatingObject = teamCards.cards[4];
         Creating = true;
-        borderOn();
         obj1 = false;
         obj2 = false;
         obj3 = false;
         obj4 = false;
         obj5 = true;
-        obj6 = false;
-    }
-    public void sixObj()
-    {
-        if (Creating)
-        {
-            creatingObject = null;
-            Creating = false;
-            borderOf();
-        }
-        creatingObject = teamCards.teamTwoCards[2];
-        Creating = true;
+       
         borderOn();
-        obj1 = false;
-        obj2 = false;
-        obj3 = false;
-        obj4 = false;
-        obj5 = false;
-        obj6 = true;
     }
     public void Cancle()
     {
@@ -279,7 +253,7 @@ public class GrassInstanciate : MonoBehaviour
             obj3 = false;
             obj4 = false;
             obj5 = false;
-            obj6 = false;
+           
         }
     }
     public void borderOn()
@@ -294,7 +268,7 @@ public class GrassInstanciate : MonoBehaviour
                     borderOnOffs[i].BorderOn();
                 }
             }
-            else if (obj2 || obj3 || obj5 || obj6)
+            else if (obj2 || obj3 || obj5)
             {
                 if (!borderOnOffs[i].cannonGrass)
                 {

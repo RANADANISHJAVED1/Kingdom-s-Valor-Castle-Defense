@@ -166,6 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grassObj: {fileID: 9209644581247601795, guid: 1003a60da5ed1e74f9b9fbc3e1c4c8a3,
     type: 3}
+  CannongrassObj: {fileID: 9209644581247601795, guid: 5a68423811ba2fe4fbd6ab03e52327ee,
+    type: 3}
   coinObj: {fileID: 7136495971748635956, guid: 89be6756531d81f4fbe5353b849d930e, type: 3}
 --- !u!114 &8719672277456349079
 MonoBehaviour:
@@ -179,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699267b805a2c1243bc8ae5f666bda90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 400
 --- !u!114 &6249124293194058341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   border: {fileID: 5107923543718585696}
-  cannonGrass: 0
+  cannonGrass: 1
 --- !u!1001 &802084148554010768
 PrefabInstance:
   m_ObjectHideFlags: 0

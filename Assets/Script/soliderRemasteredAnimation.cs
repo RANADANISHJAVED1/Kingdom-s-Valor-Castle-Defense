@@ -39,7 +39,7 @@ public class soliderRemasteredAnimation : MonoBehaviour
         {
             instanciateKnife();
             SoliderAnimation.SetTrigger("Walking");
-            speed = 0.25f;
+            speed = 0.1f;
         }
     }
     IEnumerator Speedzero()
@@ -66,6 +66,7 @@ public class soliderRemasteredAnimation : MonoBehaviour
             SoliderAnimation.SetTrigger("Dying");
             speed = 0;
             playOneTime = true;
+            StartCoroutine(GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().bloodBonesExplisionEnemy(new Vector3(this.gameObject.transform.position.x - 0.2f, this.transform.position.y, this.transform.position.z),this.gameObject));
         }
     }
 }

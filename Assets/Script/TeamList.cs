@@ -25,13 +25,22 @@ public class TeamList : MonoBehaviour
         }
         else if (level == 3)
         {
-            waveTwo = enemyList[0];
-            waveThree = enemyList[1];
+            waveTwo = enemyList[1];
+            waveThree = enemyList[0];
         }
         else if (level == 4)
         {
             waveTwo = enemyList[1];
+            waveThree = enemyList[2];
+        }
+        else if (level == 5)
+        {
+            waveTwo = enemyList[2];
             waveThree = enemyList[0];
+        }else if (level == 6)
+        {
+            waveTwo = enemyList[2];
+            waveThree = enemyList[1];
         }
     }
     void levelFeatures()

@@ -10,5 +10,6 @@ public class MainMenuLevelSelection : MonoBehaviour
     {
         PlayerPrefs.SetInt("LEVEL", level);
         SceneManager.LoadScene("GamePlayScene");
+        GameObject.Find("GameController").GetComponent<SoundController>().clickedSoundPlay();
     }
 }

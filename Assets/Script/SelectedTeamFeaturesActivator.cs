@@ -16,12 +16,13 @@ public class SelectedTeamFeaturesActivator : MonoBehaviour
     public int currency;
     public TextMeshProUGUI currencyText;
     public int level;
+    public TextMeshProUGUI levelTxt;
     private void Awake()
     {
         level = PlayerPrefs.GetInt("LEVEL");
         currency = currencyList[level-1];
         currencyText.text = currency.ToString();
-        
+        levelTxt.text = "level : " + level;
     }
     private void Start()
     {
@@ -63,11 +64,21 @@ public class SelectedTeamFeaturesActivator : MonoBehaviour
         else if (level == 4)
         {
             buttonOne = ButtonL1[1];
-            buttonTwo = ButtonL2[1];
+            buttonTwo = ButtonL2[0];
             buttonThree = ButtonL3[2];
         }
-
-
+        else if (level == 5)
+        {
+            buttonOne = ButtonL1[0];
+            buttonTwo = ButtonL2[0];
+            buttonThree = ButtonL3[1];
+        }
+        else if (level == 6)
+        {
+            buttonOne = ButtonL1[1];
+            buttonTwo = ButtonL2[0];
+            buttonThree = ButtonL3[2];
+        }
     }
     public void checkButtonActivation()
     {
@@ -79,9 +90,12 @@ public class SelectedTeamFeaturesActivator : MonoBehaviour
         }
         else if (currency >= 30 && currency < 50)
         {
-            buttonOne.SetActive(true);
-            buttonTwo.SetActive(true);
-            buttonThree.SetActive(false);
+            if(level !=4 && level != 6)
+            {
+                buttonOne.SetActive(true);
+                buttonTwo.SetActive(true);
+                buttonThree.SetActive(false);
+            }
         }
         else if (currency >= 50)
         {

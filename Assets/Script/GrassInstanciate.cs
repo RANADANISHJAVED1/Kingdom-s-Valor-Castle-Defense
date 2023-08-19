@@ -165,6 +165,7 @@ public class GrassInstanciate : MonoBehaviour
         obj3 = false;
         obj4 = false;
         obj5 = false;
+        GameObject.Find("GameManager").GetComponent<GamePlaySceneMusicController>().touchSoundPlay();
         borderOn();
     }
     public void secondObj()
@@ -183,7 +184,7 @@ public class GrassInstanciate : MonoBehaviour
         obj3 = false;
         obj4 = false;
         obj5 = false;
-        
+        GameObject.Find("GameManager").GetComponent<GamePlaySceneMusicController>().touchSoundPlay();
         borderOn();
     }
     public void thirdObj()
@@ -202,7 +203,7 @@ public class GrassInstanciate : MonoBehaviour
         obj3 = true;
         obj4 = false;
         obj5 = false;
-        
+        GameObject.Find("GameManager").GetComponent<GamePlaySceneMusicController>().touchSoundPlay();
         borderOn();
     }
     public void fourObj()
@@ -220,7 +221,7 @@ public class GrassInstanciate : MonoBehaviour
         obj3 = false;
         obj4 = true;
         obj5 = false;
-        
+        GameObject.Find("GameManager").GetComponent<GamePlaySceneMusicController>().touchSoundPlay();
         borderOn();
     }
     public void fiveObj()
@@ -238,7 +239,7 @@ public class GrassInstanciate : MonoBehaviour
         obj3 = false;
         obj4 = false;
         obj5 = true;
-       
+        GameObject.Find("GameManager").GetComponent<GamePlaySceneMusicController>().touchSoundPlay();
         borderOn();
     }
     public void Cancle()
@@ -252,9 +253,9 @@ public class GrassInstanciate : MonoBehaviour
             obj2 = false;
             obj3 = false;
             obj4 = false;
-            obj5 = false;
-           
+            obj5 = false;   
         }
+        GameObject.Find("GameManager").GetComponent<GamePlaySceneMusicController>().touchSoundPlay();
     }
     public void borderOn()
     {

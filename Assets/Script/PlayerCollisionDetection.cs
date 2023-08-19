@@ -396,7 +396,8 @@ public class PlayerCollisionDetection : MonoBehaviour
                     }
                     else if (other.gameObject.name == "Throw 2(Clone)")
                     {
-                        other.gameObject.GetComponent<EnemyCollisionDetection>().diectobjDeletionCaller();
+                        this.gameObject.GetComponent<BlueAnimationController>().died();
+                        StartCoroutine(CoinCreater());
                     }
                 }
             }
@@ -511,63 +512,62 @@ public class PlayerCollisionDetection : MonoBehaviour
             }
             else if (this.gameObject.name == "Paladin_J_Nordstrom")
             {
-                if (this.gameObject.GetComponentInParent<Health>().health < other.gameObject.GetComponent<Health>().health)
+                if (other.gameObject.name == "soldierRemastered(Clone)")
+                {
+                    other.gameObject.GetComponent<soliderRemasteredAnimation>().died();
+                    other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
+                }
+                else if (other.gameObject.name == "soldier2Remastered (1)(Clone)")
+                {
+                    other.gameObject.GetComponent<SoldiderTwoAnimationAndMovement>().died();
+                    other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
+                }
+                else if (other.gameObject.name == "Erika Archer With Bow Arrow(Clone)")
+                {
+                    other.gameObject.GetComponent<erikaArcherAnimationController>().dying();
+                    other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
+                }
+                else if (other.gameObject.name == "Throw 2(Clone)")
                 {
                     this.gameObject.GetComponentInParent<BlueAnimationController>().died();
                     StartCoroutine(CoinCreater());
                 }
-                else if (other.gameObject.GetComponent<Health>().health <= this.gameObject.GetComponentInParent<Health>().health)
+
+
+                if (other.gameObject.GetComponentInParent<Health>().health > this.gameObject.GetComponent<Health>().health)
                 {
-          
-                   if (other.gameObject.name == "soldierRemastered(Clone)")
-                    {
-                        other.gameObject.GetComponent<soliderRemasteredAnimation>().died();
-                        other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
-                    }
-                    else if (other.gameObject.name == "soldier2Remastered (1)(Clone)")
-                    {
-                        other.gameObject.GetComponent<SoldiderTwoAnimationAndMovement>().died();
-                        other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
-                    }
-                    else if (other.gameObject.name == "Erika Archer With Bow Arrow(Clone)")
-                    {
-                        other.gameObject.GetComponent<erikaArcherAnimationController>().dying();
-                        other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
-                    }
-                    else if (other.gameObject.name == "Throw 2(Clone)")
-                    {
-                        other.gameObject.GetComponent<EnemyCollisionDetection>().diectobjDeletionCaller();
-                    }
+                    this.gameObject.GetComponentInParent<BlueAnimationController>().died();
+                    StartCoroutine(CoinCreater());
                 }
             }
             else if (this.gameObject.name == "Paladin_J_Nordstrom_Helmet")
             {
-                if (this.gameObject.GetComponentInParent<Health>().health < other.gameObject.GetComponent<Health>().health)
+                if (other.gameObject.name == "soldierRemastered(Clone)")
+                {
+                    other.gameObject.GetComponent<soliderRemasteredAnimation>().died();
+                    other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
+                }
+                else if (other.gameObject.name == "soldier2Remastered (1)(Clone)")
+                {
+                    other.gameObject.GetComponent<SoldiderTwoAnimationAndMovement>().died();
+                    other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
+                }
+                else if (other.gameObject.name == "Erika Archer With Bow Arrow(Clone)")
+                {
+                    other.gameObject.GetComponent<erikaArcherAnimationController>().dying();
+                    other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
+                }
+                else if (other.gameObject.name == "Throw 2(Clone)")
                 {
                     this.gameObject.GetComponentInParent<BlueAnimationController>().died();
                     StartCoroutine(CoinCreater());
                 }
-                else if (other.gameObject.GetComponent<Health>().health <= this.gameObject.GetComponentInParent<Health>().health)
+
+
+                if (other.gameObject.GetComponentInParent<Health>().health > this.gameObject.GetComponent<Health>().health)
                 {
-                     if (other.gameObject.name == "soldierRemastered(Clone)")
-                    {
-                        other.gameObject.GetComponent<soliderRemasteredAnimation>().died();
-                        other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
-                    }
-                    else if (other.gameObject.name == "soldier2Remastered (1)(Clone)")
-                    {
-                        other.gameObject.GetComponent<SoldiderTwoAnimationAndMovement>().died();
-                        other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
-                    }
-                    else if (other.gameObject.name == "Throw 2(Clone)")
-                    {
-                        other.gameObject.GetComponent<EnemyCollisionDetection>().diectobjDeletionCaller();
-                    }
-                    else if (other.gameObject.name == "Erika Archer With Bow Arrow(Clone)")
-                    {
-                        other.gameObject.GetComponent<erikaArcherAnimationController>().dying();
-                        other.gameObject.GetComponent<EnemyCollisionDetection>().callOutsideObjDeletionCaller();
-                    }
+                    this.gameObject.GetComponentInParent<BlueAnimationController>().died();
+                    StartCoroutine(CoinCreater());
                 }
             }
             else if (this.gameObject.name == "player Erika Archer With Bow Arrow 1(Clone)")
@@ -618,8 +618,8 @@ public class PlayerCollisionDetection : MonoBehaviour
         yield return new WaitForSeconds(3);
         if (!callOneTime)
         {
-            StartCoroutine(this.gameObject.GetComponentInParent<GroundReplaceWithGrass>().coin());
             callOneTime = true;
+            StartCoroutine(this.gameObject.GetComponentInParent<GroundReplaceWithGrass>().coin());
         }
     }
 }

@@ -22,6 +22,8 @@ public class GrassInstanciate : MonoBehaviour
     private bool obj3;
     private bool obj4;
     private bool obj5;
+    public GameObject cancleBtn;
+    public Animator cancleAnimation;
     void Start()
     {
         /** for(int i = 0; i < row * column; i++)
@@ -35,6 +37,7 @@ public class GrassInstanciate : MonoBehaviour
         obj3 = false;
         obj4 = false;
         obj5 = false;
+        cancleBtn.SetActive(false);
     }
 
     // Update is called once per frame
@@ -205,6 +208,7 @@ public class GrassInstanciate : MonoBehaviour
         obj5 = false;
         GameObject.Find("GameManager").GetComponent<GamePlaySceneMusicController>().touchSoundPlay();
         borderOn();
+        
     }
     public void fourObj()
     {
@@ -223,6 +227,7 @@ public class GrassInstanciate : MonoBehaviour
         obj5 = false;
         GameObject.Find("GameManager").GetComponent<GamePlaySceneMusicController>().touchSoundPlay();
         borderOn();
+        
     }
     public void fiveObj()
     {
@@ -241,6 +246,7 @@ public class GrassInstanciate : MonoBehaviour
         obj5 = true;
         GameObject.Find("GameManager").GetComponent<GamePlaySceneMusicController>().touchSoundPlay();
         borderOn();
+       
     }
     public void Cancle()
     {
@@ -260,6 +266,7 @@ public class GrassInstanciate : MonoBehaviour
     public void borderOn()
     {
         borderOnOffs = this.GetComponentsInChildren<BorderOnOff>();
+        btnClicked();
         for (int i = 0; i < borderOnOffs.Length; i++)
         {
             if (obj1 || obj4)
@@ -278,6 +285,17 @@ public class GrassInstanciate : MonoBehaviour
             }
         }
     }
+    void btnClicked()
+    {
+        cancleBtn.SetActive(true);
+        cancleAnimation.SetTrigger("Empty");
+    }
+    void cancleOff()
+    {
+        cancleBtn.SetActive(false);
+        cancleAnimation.SetTrigger("Button");
+
+    }
     public void borderOf()
     {
         borderOnOffs = this.GetComponentsInChildren<BorderOnOff>();
@@ -288,5 +306,6 @@ public class GrassInstanciate : MonoBehaviour
                     borderOnOffs[i].BorderOff();
             
         }
+        cancleOff();
     }
 }

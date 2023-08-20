@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -39,6 +41,7 @@ public class SelectedTeamFeaturesActivator : MonoBehaviour
             ButtonL3[i].SetActive(false);
         }
         levelFeatures();
+        activationBtn();
         checkButtonActivation();
     }
     void levelFeatures()
@@ -82,7 +85,38 @@ public class SelectedTeamFeaturesActivator : MonoBehaviour
     }
     public void checkButtonActivation()
     {
-        if (currency >= 25 && currency <30)
+        if (currency >= 25 && currency < 30)
+        {
+            buttonOne.gameObject.GetComponent<Button>().interactable = true ;
+            buttonTwo.gameObject.GetComponent<Button>().interactable = false;
+            buttonThree.gameObject.GetComponent<Button>().interactable = false;
+        }
+        else if (currency >= 30 && currency < 50)
+        {
+            if (level != 4 && level != 6)
+            {
+                buttonOne.gameObject.GetComponent<Button>().interactable = true;
+                buttonTwo.gameObject.GetComponent<Button>().interactable = true;
+                buttonThree.gameObject.GetComponent<Button>().interactable = false;
+            }
+        }
+        else if (currency >= 50)
+        {
+            buttonOne.gameObject.GetComponent<Button>().interactable = true;
+            buttonTwo.gameObject.GetComponent<Button>().interactable = true;
+            buttonThree.gameObject.GetComponent<Button>().interactable = true;
+        }
+        else if (currency < 25)
+        {
+            buttonOne.gameObject.GetComponent<Button>().interactable = false;
+            buttonTwo.gameObject.GetComponent<Button>().interactable = false;
+            buttonThree.gameObject.GetComponent<Button>().interactable = false;
+        }
+        currencyText.text = currency.ToString();
+    }
+    public void activationBtn()
+    {
+        if (currency >= 25 && currency < 30)
         {
             buttonOne.SetActive(true);
             buttonTwo.SetActive(false);
@@ -90,7 +124,7 @@ public class SelectedTeamFeaturesActivator : MonoBehaviour
         }
         else if (currency >= 30 && currency < 50)
         {
-            if(level !=4 && level != 6)
+            if (level != 4 && level != 6)
             {
                 buttonOne.SetActive(true);
                 buttonTwo.SetActive(true);

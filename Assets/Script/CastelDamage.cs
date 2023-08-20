@@ -19,8 +19,8 @@ public class CastelDamage : MonoBehaviour
     {
         health = this.gameObject.GetComponent<Health>();
         callOneTime = false;
-        ourstrenthtxt.text = "Health : " + health.health.ToString();
-        enemystrenthtxt.text = "Health : " + health.health.ToString();
+        ourstrenthtxt.text = "Castle Health : " + health.health.ToString();
+        enemystrenthtxt.text = "Castle Health : " + health.health.ToString();
         
     }
 
@@ -54,28 +54,28 @@ public class CastelDamage : MonoBehaviour
             {
                 GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().smokeInsFun(other.transform.position);
                 health.healthDecrement(-40);
-                ourstrenthtxt.text = "Health: " + health.health.ToString();
+                ourstrenthtxt.text = "Castle Health: " + health.health.ToString();
                 Destroy(other.gameObject);
             }
             else if (other.gameObject.name == "Enemyspear(Clone)")
             {
                 health.healthDecrement(-20);
                 GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().smallSmokeInsFun(new Vector3(other.gameObject.transform.position.x - 1.2f, other.transform.position.y, other.transform.position.z));
-                ourstrenthtxt.text = "Health : " + health.health.ToString();
+                ourstrenthtxt.text = "Castle Health : " + health.health.ToString();
                 Destroy(other.gameObject);
             }
             else if (other.gameObject.name == "Arrow_01(Clone)")
             {
                 health.healthDecrement(-10);
                 GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().smallSmokeInsFun(new Vector3(other.gameObject.transform.position.x - 0.2f, other.transform.position.y, other.transform.position.z));
-                ourstrenthtxt.text = "Health : " + health.health.ToString();
+                ourstrenthtxt.text = "Castle Health : " + health.health.ToString();
                 Destroy(other.gameObject);
             }
             else if (other.gameObject.name == "Knife(Clone)")
             {
                 GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().smallSmokeInsFun(new Vector3(other.gameObject.transform.position.x - 0.2f, other.transform.position.y, other.transform.position.z));
                 health.healthDecrement(-10);
-                ourstrenthtxt.text = "Health : " + health.health.ToString();
+                ourstrenthtxt.text = "Castle Health : " + health.health.ToString();
                 Destroy(other.gameObject);
             }
             
@@ -86,7 +86,7 @@ public class CastelDamage : MonoBehaviour
             {
                 GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().smallSmokeInsFun(new Vector3(other.gameObject.transform.position.x + 0.3f, other.transform.position.y, other.transform.position.z));
                 health.healthDecrement(-5);
-                enemystrenthtxt.text = "Health : " + health.health.ToString();
+                enemystrenthtxt.text = "Castle Health : " + health.health.ToString();
                 Destroy(other.gameObject);
 
             }
@@ -94,7 +94,7 @@ public class CastelDamage : MonoBehaviour
             {
                 GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().fireSmokeInsFun(new Vector3(other.transform.position.x + 0.1f, other.transform.position.y, other.transform.position.z));
                 health.healthDecrement(-3);
-                enemystrenthtxt.text = "Health : " + health.health.ToString();
+                enemystrenthtxt.text = "Castle Health : " + health.health.ToString();
                 Destroy(other.gameObject);
             }
         }

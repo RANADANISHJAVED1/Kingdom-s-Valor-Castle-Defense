@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   border: {fileID: 7562990906232457909}
+  cannonGrass: 0
 --- !u!1001 &7936974110011448782
 PrefabInstance:
   m_ObjectHideFlags: 0

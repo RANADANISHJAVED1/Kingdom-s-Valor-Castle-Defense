@@ -85,7 +85,7 @@ public class CastelDamage : MonoBehaviour
             if (other.gameObject.name == "arrowPlayer(Clone)" || other.gameObject.name == "Knife For Static(Clone)")
             {
                 GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().smallSmokeInsFun(new Vector3(other.gameObject.transform.position.x + 0.3f, other.transform.position.y, other.transform.position.z));
-                health.healthDecrement(-5);
+                health.healthDecrement(-10);
                 enemystrenthtxt.text = "Castle Health : " + health.health.ToString();
                 Destroy(other.gameObject);
 
@@ -93,7 +93,7 @@ public class CastelDamage : MonoBehaviour
             else if (other.gameObject.name == "CANNON FIRE BALL(Clone)" || other.gameObject.name == "cannon ball Prefab(Clone)")
             {
                 GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().fireSmokeInsFun(new Vector3(other.transform.position.x + 0.1f, other.transform.position.y, other.transform.position.z));
-                health.healthDecrement(-3);
+                health.healthDecrement(-8);
                 enemystrenthtxt.text = "Castle Health : " + health.health.ToString();
                 Destroy(other.gameObject);
             }

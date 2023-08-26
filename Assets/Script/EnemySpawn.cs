@@ -18,11 +18,13 @@ public class EnemySpawn : MonoBehaviour
     int zPositionNotRandomForSecond;
     int zPositionNotRandomForThird;
     float unRandomX;
+    float randomPositonSecondX;
     private int loopChecker;
     private float secWaitTime = 0;
     private float TimeOfFirstWaveDefiner = 5;
     private int thirdWaveChecker;
     private int thirdWaveInnerIncrementator;
+    private int loopseceondxpositionrandom;
 
     private void Start()
     {
@@ -94,6 +96,7 @@ public class EnemySpawn : MonoBehaviour
         {
             time = secondWaveTime;
             loop = secondWaveEnemyNumbers;
+            loopseceondxpositionrandom = loop;
             secWaitTime = 0;
         }
         else if (time <= 0 && firstWaveTime <= 0 && secondWaveTime <= 0 && thirdWaveTime > 0 && loop == 0)
@@ -123,9 +126,26 @@ public class EnemySpawn : MonoBehaviour
         }
         else if (firstWaveTime < 0 && secondWaveTime < 0 && thirdWaveTime > 0)
         {
+            
             if (zPositionNotRandomForSecond <= 5)
             {
-                var obj = Instantiate(teamList.waveTwo, new Vector3(8, 0, zPositionNotRandomForSecond), teamList.waveTwo.transform.rotation);
+               
+                if (loopseceondxpositionrandom > 10)
+                {
+                    randomPositonSecondX = 6;
+                    loopseceondxpositionrandom--;
+                }
+                else if (loopseceondxpositionrandom <=10 && loopseceondxpositionrandom > 5)
+                {
+                    randomPositonSecondX = 7;
+                    loopseceondxpositionrandom--;
+                }
+                else if (loopseceondxpositionrandom <=5 && loopseceondxpositionrandom>0)
+                {
+                    randomPositonSecondX = 8;
+                    loopseceondxpositionrandom--;
+                }
+                var obj = Instantiate(teamList.waveTwo, new Vector3(randomPositonSecondX, 0, zPositionNotRandomForSecond), teamList.waveTwo.transform.rotation);
                 obj.transform.parent = EnemyListFatherObj.transform;
                 zPositionNotRandomForSecond = numberSwitch(zPositionNotRandomForSecond);
             }

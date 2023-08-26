@@ -1991,6 +1991,7 @@ GameObject:
   - component: {fileID: 2355923030370920330}
   - component: {fileID: 4739938034233304376}
   - component: {fileID: 3995375557264336264}
+  - component: {fileID: 480439532754446205}
   m_Layer: 0
   m_Name: blue soldier
   m_TagString: PLAYER
@@ -2126,6 +2127,19 @@ MonoBehaviour:
     type: 3}
   CannongrassObj: {fileID: 0}
   coinObj: {fileID: 7136495971748635956, guid: 89be6756531d81f4fbe5353b849d930e, type: 3}
+--- !u!114 &480439532754446205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937375924678710811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58770a424763a9747be2508cf349a1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  check: 0
 --- !u!1 &3987074707811272259
 GameObject:
   m_ObjectHideFlags: 0

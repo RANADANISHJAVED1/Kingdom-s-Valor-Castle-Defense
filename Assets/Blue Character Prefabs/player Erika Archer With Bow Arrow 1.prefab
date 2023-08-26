@@ -1741,6 +1741,7 @@ GameObject:
   - component: {fileID: 3021871034859251180}
   - component: {fileID: 8417595699172425718}
   - component: {fileID: 5275596297426930932}
+  - component: {fileID: 1115464842620463524}
   m_Layer: 0
   m_Name: player Erika Archer With Bow Arrow 1
   m_TagString: PLAYER
@@ -1876,7 +1877,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grassObj: {fileID: 9209644581247601795, guid: 1003a60da5ed1e74f9b9fbc3e1c4c8a3,
     type: 3}
+  CannongrassObj: {fileID: 0}
   coinObj: {fileID: 7136495971748635956, guid: 89be6756531d81f4fbe5353b849d930e, type: 3}
+--- !u!114 &1115464842620463524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951845974685359825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58770a424763a9747be2508cf349a1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  check: 0
 --- !u!1 &3974276182840626825
 GameObject:
   m_ObjectHideFlags: 0

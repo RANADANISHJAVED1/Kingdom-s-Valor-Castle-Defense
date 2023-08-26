@@ -17,13 +17,18 @@ public class ThreePlayerColidersWin : MonoBehaviour
     {
         if(other.CompareTag("PLAYER"))
         {
-            target++;
-            if (target >= 3)
+            if (!other.gameObject.GetComponent<Checked>().check)
             {
-                winScreen.SetActive(true);
-                Wintext.SetActive(true);
-                Time.timeScale = 0;
+                other.gameObject.GetComponent<Checked>().check = true;
+                target++;
+                if (target >= 3)
+                {
+                    winScreen.SetActive(true);
+                    Wintext.SetActive(true);
+                    Time.timeScale = 0;
+                }
             }
+            
         }
     }
 }

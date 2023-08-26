@@ -1400,6 +1400,7 @@ GameObject:
   - component: {fileID: 3541206770148631755}
   - component: {fileID: 271236928089657408}
   - component: {fileID: 803969506306751292}
+  - component: {fileID: 2782945025944592314}
   m_Layer: 0
   m_Name: soldierRemastered
   m_TagString: ENEMY
@@ -1544,6 +1545,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ring: {fileID: 6741160576796623973}
   ringObj: {fileID: 6866668014626889369}
+--- !u!114 &2782945025944592314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6011952219742009456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58770a424763a9747be2508cf349a1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  check: 0
 --- !u!1 &6378923862756308877
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,12 +26,16 @@ public class LoseLogic : MonoBehaviour
     {
         if (other.gameObject.CompareTag("ENEMY"))
         {
-            increment++;
-            if(increment >= check)
+            if (!other.gameObject.GetComponent<Checked>().check)
             {
-                gameLoseScreen.SetActive(true);
-                LoseScreenText.SetActive(true);
-                Time.timeScale = 0;
+                other.gameObject.GetComponent<Checked>().check = true;
+                increment++;
+                if (increment >= check)
+                {
+                    gameLoseScreen.SetActive(true);
+                    LoseScreenText.SetActive(true);
+                    Time.timeScale = 0;
+                }
             }
         }
       

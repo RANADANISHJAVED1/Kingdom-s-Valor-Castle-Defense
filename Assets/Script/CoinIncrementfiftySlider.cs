@@ -14,7 +14,7 @@ public class CoinIncrementfiftySlider : MonoBehaviour
     private void Start()
     {
         playSound = false;
-        coinIncreaseSlider.maxValue = 30;
+        coinIncreaseSlider.maxValue = 20;
         coinIncreaseSlider.value = 0;
         coinIncreaseBtn.SetActive(false);
         triggedOneTime = false;

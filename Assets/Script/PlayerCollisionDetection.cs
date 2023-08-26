@@ -46,7 +46,7 @@ public class PlayerCollisionDetection : MonoBehaviour
 ;
                     GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().smallSmokeInsFun(new Vector3(other.gameObject.transform.position.x - 0.2f, other.transform.position.y, other.transform.position.z));
                     Destroy(other.gameObject);
-                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-6);
+                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-8);
                     if (this.gameObject.GetComponentInParent<Health>().health <= 0)
                     {
                         this.gameObject.GetComponentInParent<GroundReplaceWithGrass>().cannonreplace();
@@ -57,7 +57,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 {
                     GameObject.Find("GameManager").GetComponent<GameManagerParticularEffect>().smallSmokeInsFun(new Vector3(other.gameObject.transform.position.x - 0.2f, other.transform.position.y, other.transform.position.z));
                     Destroy(other.gameObject);
-                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-6);
+                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-8);
                     if (this.gameObject.GetComponentInParent<Health>().health <= 0)
                     {
                         this.gameObject.GetComponentInParent<GroundReplaceWithGrass>().cannonreplace();
@@ -66,7 +66,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 }
                 else if (this.gameObject.name == "blue soldier(Clone)")
                 {
-                    this.gameObject.GetComponent<Health>().healthDecrement(-6);
+                    this.gameObject.GetComponent<Health>().healthDecrement(-8);
                     if (this.gameObject.GetComponent<Health>().health <= 0)
                     {  
                         this.gameObject.GetComponent<BlueAnimationController>().died();
@@ -81,7 +81,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 else if (this.gameObject.name == "Paladin_J_Nordstrom")
                 {
                     
-                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-6);
+                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-8);
                     if (this.gameObject.GetComponentInParent<Health>().health <= 0)
                     {
                         this.gameObject.GetComponentInParent<BlueAnimationController>().died();
@@ -96,7 +96,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 else if (this.gameObject.name == "Paladin_J_Nordstrom_Helmet")
                 {
                     
-                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-6);
+                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-8);
                     if (this.gameObject.GetComponentInParent<Health>().health <= 0)
                     {
                         this.gameObject.GetComponentInParent<BlueAnimationController>().died();
@@ -111,7 +111,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 else if (this.gameObject.name == "player Erika Archer With Bow Arrow 1(Clone)")
                 {
                     
-                    this.gameObject.GetComponent<Health>().healthDecrement(-6);
+                    this.gameObject.GetComponent<Health>().healthDecrement(-8);
                     if (this.gameObject.GetComponent<Health>().health <= 0)
                     {
                         this.gameObject.GetComponent<erikaArcherAnimationController>().dying();
@@ -126,7 +126,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 else if (this.gameObject.name == "soldierRemastered")
                 {
                     
-                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-6);
+                    this.gameObject.GetComponentInParent<Health>().healthDecrement(-8);
                     if (this.gameObject.GetComponentInParent<Health>().health <= 0)
                     {
                         this.gameObject.GetComponent<SitaticKnifeThrow>().Died();
